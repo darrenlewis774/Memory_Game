@@ -1,6 +1,6 @@
 #container {
   width: 500px;
-  height: 460px;
+  height: 530px;
   border: solid;
   background-color: lightgray;
   border-radius: 5px;
@@ -54,6 +54,23 @@ p {
 }
 
 #result {
+  border: solid;
+  background-color: white;
+  padding: 5px 10px;
+}
+
+#time {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+#timeTaken {
   border: solid;
   background-color: white;
   padding: 5px 10px;

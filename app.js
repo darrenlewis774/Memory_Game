@@ -53,14 +53,17 @@ const cardArray = [
 more than or less than 0.5, and then sorting the array depending on these values.*/
 cardArray.sort(() => 0.5 - Math.random())
 
-// Assign div element 'grid' to variable 'gridDisplay'.
+// Assign HTML div element's IDs to const variables.
 const gridDisplay = document.querySelector('#grid')
 const resultDisplay = document.querySelector('#result')
 const completed = document.querySelector('#completed')
+const timeDisplay = document.querySelector('#timeTaken')
 
 let cardsChosen = []
 let cardsChosenIds = []
 const cardsWon = []
+let currentTime = 0
+let timerId = setInterval(timer, 1000)
 
 createBoard()
 
@@ -139,6 +142,14 @@ function checkMatch() {
   /* If the length of the 'cardsWon' array is equal to half that of the 'cardArray' array, this means that all of the
    matches have been located. The 'completed' element is then unhidden, outlining that the game has been completed. */
   if (cardsWon.length == cardArray.length / 2) {
+    clearInterval(timerId)
     completed.style.display = "block"
   }
 }
+
+function timer() {
+  // Increments 'currentTime' and displays to 'timeDisplay' each time function is invoked.
+  currentTime++
+  timeDisplay.innerHTML = currentTime
+}
+
