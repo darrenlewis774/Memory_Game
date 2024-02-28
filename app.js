@@ -64,6 +64,7 @@ let cardsChosenIds = []
 const cardsWon = []
 let currentTime = 0
 let timerId = setInterval(timer, 1000)
+let firstCard = true
 
 createBoard()
 
@@ -90,6 +91,12 @@ function createBoard() {
 function flipCard() {
   /* This function is invoked when a card created by function 'createBoard' is clicked on. The data id attribute for 
   this card is assigned to const variable cardId */
+  if (firstCard) {
+    /* If this is the first card clicked, the timer is started. 'firstCard' parameter is then set to false, to ensure
+    that it is not restarted again. */
+    timerId = setInterval(timer, 1000)
+    firstCard = false
+  }
   const cardId = this.getAttribute('data-id')
   // The name property of the clicked card, within the 'cardArray' array, is added to the 'cardsChosen' array.
   cardsChosen.push(cardArray[cardId].name)
