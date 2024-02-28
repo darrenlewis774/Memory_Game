@@ -85,6 +85,8 @@ function createBoard() {
   completed.style.display = "none"
 }
 
+// This comment I do not need!!
+
 function flipCard() {
   /* This function is invoked when a card created by function 'createBoard' is clicked on. The data id attribute for 
   this card is assigned to const variable cardId */
