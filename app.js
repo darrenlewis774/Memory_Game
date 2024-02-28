@@ -63,7 +63,7 @@ let cardsChosen = []
 let cardsChosenIds = []
 const cardsWon = []
 let currentTime = 0
-let timerId = setInterval(timer, 1000)
+let timerId
 let firstCard = true
 
 createBoard()
